@@ -863,8 +863,8 @@ nets = dict(
         VERSION_CHECK=lambda v: 10000 <= v,
         VERSION_WARNING=lambda v: 'Upgrade FCKbankscoin to >=1.0.0.0!' if v < 10000 else None,
     ),
-	SambaCoin=math.object(
-		PARENT=networks.nets['SambaCoin'],
+	sambacoin=math.object(
+		PARENT=networks.nets['sambacoin'],
 		SHARE_PERIOD=5,
 		CHAIN_LENGTH=24*60*60//10,
 		REAL_CHAIN_LENGTH=24*60*60//10,
