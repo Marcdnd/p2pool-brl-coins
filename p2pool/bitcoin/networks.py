@@ -1019,10 +1019,10 @@ nets = dict(
         DUMB_SCRYPT_DIFF=2**16, #??
         DUST_THRESHOLD=0.03e8, #??
     ),
-	sambacoin=math.Object(
+    sambacoin=math.Object(
         P2P_PREFIX='eba0062b'.decode('hex'), # 0xeb, 0xa0, 0x06, 0x2b
         P2P_PORT=11255, #SambaCoins's p2p port
-        ADDRESS_VERSION=62, #look again in the sourcecode in the file base58.h, and find the value of PUBKEY_ADDRESS.
+        ADDRESS_VERSION=62, 
         RPC_PORT=11233, #SambaCoins's rpc port
         RPC_CHECK=defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
             'sambacoinaddress' in (yield bitcoind.rpc_help()) and

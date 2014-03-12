@@ -880,7 +880,7 @@ nets = dict(
         BOOTSTRAP_ADDRS='theminingcrew.com'.split(' '),
         ANNOUNCE_CHANNEL='#p2pool-alt',
         VERSION_CHECK=lambda v: True,		
-	)
+    ),
 
 )
 for net_name, net in nets.iteritems():
