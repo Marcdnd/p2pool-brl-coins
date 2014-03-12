@@ -1028,7 +1028,7 @@ nets = dict(
             'sambacoinaddress' in (yield bitcoind.rpc_help()) and
             not (yield bitcoind.rpc_getinfo())['testnet']
         )),
-		SUBSIDY_FUNC=lambda height: 4000*100000000 if height<10580 else 400*100000000,
+        SUBSIDY_FUNC=lambda height: 4000*100000000 if height<10580 else 400*100000000,
         POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('ltc_scrypt').getPoWHash(data)),
         BLOCK_PERIOD=90, # one block generation time
         SYMBOL='SMB',
