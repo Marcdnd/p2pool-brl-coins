@@ -1019,16 +1019,16 @@ nets = dict(
         DUMB_SCRYPT_DIFF=2**16, #??
         DUST_THRESHOLD=0.03e8, #??
     ),
-    sambacoin=math.Object(
+	sambacoin=math.Object(
         P2P_PREFIX='eba0062b'.decode('hex'), # 0xeb, 0xa0, 0x06, 0x2b
         P2P_PORT=11255, #SambaCoins's p2p port
-        ADDRESS_VERSION=62, 
+        ADDRESS_VERSION=62, #look again in the sourcecode in the file base58.h, and find the value of PUBKEY_ADDRESS.
         RPC_PORT=11233, #SambaCoins's rpc port
         RPC_CHECK=defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
             'sambacoinaddress' in (yield bitcoind.rpc_help()) and
             not (yield bitcoind.rpc_getinfo())['testnet']
         )),
-        SUBSIDY_FUNC=lambda height: 4000*100000000 if height<10580 else 400*100000000,
+		SUBSIDY_FUNC=lambda height: 4000*100000000 if height<10580 else 400*100000000,
         POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('ltc_scrypt').getPoWHash(data)),
         BLOCK_PERIOD=90, # one block generation time
         SYMBOL='SMB',

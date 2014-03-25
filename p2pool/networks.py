@@ -863,15 +863,15 @@ nets = dict(
         VERSION_CHECK=lambda v: 10000 <= v,
         VERSION_WARNING=lambda v: 'Upgrade FCKbankscoin to >=1.0.0.0!' if v < 10000 else None,
     ),
-    sambacoin=math.Object(
-        PARENT=networks.nets['sambacoin'],
-        SHARE_PERIOD=5,
-        CHAIN_LENGTH=24*60*60//10,
-        REAL_CHAIN_LENGTH=24*60*60//10,
-        TARGET_LOOKBEHIND=30,
+	sambacoin=math.Object(
+		PARENT=networks.nets['sambacoin'],
+		SHARE_PERIOD=5,
+		CHAIN_LENGTH=24*60*60//10,
+		REAL_CHAIN_LENGTH=24*60*60//10,
+		TARGET_LOOKBEHIND=30,
         SPREAD=20, # blocks
-        IDENTIFIER='a8h8sjds8239sc82'.decode('hex'),
-        PREFIX='a95jhsdhs932js32'.decode('hex'),
+        IDENTIFIER='ab88699cb8855988'.decode('hex'),
+        PREFIX='9b89658bb9547bb8'.decode('hex'),
         P2P_PORT=11256,
         MIN_TARGET=0,
         MAX_TARGET=2**256//2**20 - 1,
@@ -880,8 +880,8 @@ nets = dict(
         BOOTSTRAP_ADDRS='theminingcrew.com'.split(' '),
         ANNOUNCE_CHANNEL='#p2pool-alt',
         VERSION_CHECK=lambda v: True,		
-    ),
-
+	),
+	
 )
 for net_name, net in nets.iteritems():
     net.NAME = net_name
