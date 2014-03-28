@@ -1039,7 +1039,28 @@ nets = dict(
         SANE_TARGET_RANGE=(2**256//1000000000 - 1, 2**256//1000 - 1), #??
         DUMB_SCRYPT_DIFF=2**16, #??
         DUST_THRESHOLD=0.03e8, #??
-    )
+    ),
+	fluttercoin=math.Object( 
+		P2P_PREFIX='cfd1e8ea'.decode('hex'), # 0xcf, 0xd1, 0xe8, 0xea
+        P2P_PORT=7474, #FlutterCoin's p2p port
+        ADDRESS_VERSION=35, 
+        RPC_PORT=11233, #FlutterCoin's rpc port
+        RPC_CHECK=defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
+            'sambacoinaddress' in (yield bitcoind.rpc_help()) and
+            not (yield bitcoind.rpc_getinfo())['testnet']
+        )),
+		SUBSIDY_FUNC= 5000*100000000,
+        POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('ltc_scrypt').getPoWHash(data)),
+        BLOCK_PERIOD=90, # one block generation time
+        SYMBOL='FLT',
+        CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'fluttercoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/fluttercoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.fluttercoin'), 'fluttercoin.conf'),
+        BLOCK_EXPLORER_URL_PREFIX='http://explorer.fluttercoin.us/block/',
+        ADDRESS_EXPLORER_URL_PREFIX='http://explorer.fluttercoin.us/address/',
+        TX_EXPLORER_URL_PREFIX='http://explorer.fluttercoin.us/tx/',
+        SANE_TARGET_RANGE=(2**256//1000000000 - 1, 2**256//1000 - 1), #??
+        DUMB_SCRYPT_DIFF=2**16, #??
+        DUST_THRESHOLD=0.03e8, #??
+	)
 
 )
 for net_name, net in nets.iteritems():
