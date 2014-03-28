@@ -1042,9 +1042,9 @@ nets = dict(
     ),
 	fluttercoin=math.Object( 
 		P2P_PREFIX='cfd1e8ea'.decode('hex'), # 0xcf, 0xd1, 0xe8, 0xea
-        P2P_PORT=7474, #FlutterCoin's p2p port
+        P2P_PORT=7408, #FlutterCoin's p2p port
         ADDRESS_VERSION=35, 
-        RPC_PORT=11233, #FlutterCoin's rpc port
+        RPC_PORT=7474, #FlutterCoin's rpc port
         RPC_CHECK=defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
             'sambacoinaddress' in (yield bitcoind.rpc_help()) and
             not (yield bitcoind.rpc_getinfo())['testnet']
