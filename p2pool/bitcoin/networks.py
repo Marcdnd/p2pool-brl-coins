@@ -30,9 +30,9 @@ nets = dict(
         BLOCK_PERIOD=90, # one block generation time
         SYMBOL='SMB',
         CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'sambacoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/sambacoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.sambacoin'), 'sambacoin.conf'),
-        BLOCK_EXPLORER_URL_PREFIX='http://be.sambacoin.info:2750/block/',
-        ADDRESS_EXPLORER_URL_PREFIX='http://be.sambacoin.info:2750/address/',
-        TX_EXPLORER_URL_PREFIX='http://be.sambacoin.info:2750/tx/',
+        BLOCK_EXPLORER_URL_PREFIX='http://be.sambacoin.info/block/',
+        ADDRESS_EXPLORER_URL_PREFIX='http://be.sambacoin.info/address/',
+        TX_EXPLORER_URL_PREFIX='http://be.sambacoin.info/tx/',
         SANE_TARGET_RANGE=(2**256//1000000000 - 1, 2**256//1000 - 1), #??
         DUMB_SCRYPT_DIFF=2**16, #??
         DUST_THRESHOLD=0.03e8, #??
