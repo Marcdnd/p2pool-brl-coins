@@ -22,8 +22,8 @@ nets = dict(
         MAX_TARGET=2**256//2**20 - 1,
         PERSIST=False,
         WORKER_PORT=24006,
-        BOOTSTRAP_ADDRS='theminingcrew.com'.split(' '),
-        ANNOUNCE_CHANNEL='#p2pool-alt',
+        BOOTSTRAP_ADDRS='p2pool.noip.me'.split(' '),
+        ANNOUNCE_CHANNEL='#sambacoin-en',
         VERSION_CHECK=lambda v: True,		
 	),
 )
