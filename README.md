@@ -93,7 +93,7 @@ Run P2Pool with the "--net sambacoin" option.
 Run your miner program, connecting to 127.0.0.1 on port 24006.
 Forward port 11256 to the host running P2Pool.
 
-The standard ports to samabcoint.conf are:
+The standard ports to samabcoin.conf are:
 
     rpcport=11233
     port=11255
