@@ -37,7 +37,13 @@ Run for additional options.
 
 Donations towards further development:
 -------------------------
-    1HNeqi3pJRNvXybNX4FKzZgYJsdTSqJTbk
+    To original developer
+    BTC - 1HNeqi3pJRNvXybNX4FKzZgYJsdTSqJTbk
+
+    To this work with Sambacoin
+    SMB - SCMs5FjoU5BdFjaCQKGRHqH84YZVowVr4i
+    BTC - 1M96ZhfeutzQcd9PrMobXJGsSmWttvDroC
+    LTC - LcF3ptSqsxWwdScxQU1sd3VikuzXNvLH5f
 
 Official wiki :
 -------------------------
@@ -47,11 +53,11 @@ Alternate web front end :
 -------------------------
 * https://github.com/hardcpp/P2PoolExtendedFrontEnd
 
-Notes for Litecoin:
+Notes for Sambacoin:
 =========================
 Requirements:
 -------------------------
-In order to run P2Pool with the Litecoin network, you would need to build and install the
+In order to run P2Pool with the Sambacoin network, you would need to build and install the
 ltc_scrypt module that includes the scrypt proof of work code that Litecoin uses for hashes.
 
 Linux:
@@ -83,16 +89,14 @@ http://stackoverflow.com/questions/6034390/compiling-with-cython-and-mingw-produ
 
 Running P2Pool:
 -------------------------
-Run P2Pool with the "--net litecoin" option.
-Run your miner program, connecting to 127.0.0.1 on port 9327.
-Forward port 9338 to the host running P2Pool.
+Run P2Pool with the "--net sambacoin" option.
+Run your miner program, connecting to 127.0.0.1 on port 24006.
+Forward port 11256 to the host running P2Pool.
 
-Litecoin's use of ports 9332 and 9332 conflicts with P2Pool running on
-the Bitcoin network. To avoid problems, add these lines to litecoin.conf
-and restart litecoind:
+The standard ports to samabcoint.conf are:
 
-    rpcport=10332
-    port=10333
+    rpcport=11233
+    port=11255
 
 Sponsors:
 -------------------------
@@ -100,4 +104,6 @@ Sponsors:
 Thanks to:
 * The Bitcoin Foundation for its generous support of P2Pool
 * The Litecoin Project for its generous donations to P2Pool
+* The P2pool Project for its generous open source code
+* The Sambacoin Project Team - The first BRAZILIAN crypto coin
 
